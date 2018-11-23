@@ -66,10 +66,10 @@ class CopilotModal extends Component<Props, State> {
     tooltipColor: "white",
     tooltipTextColor: "black",
     tooltipButtonStyle: null,
-    tooltipSkipText: "Skip",
-    tooltipPreviousText: "Previous",
-    tooltipNextText: "Next",
-    tooltipFinishText: "Finish",
+    tooltipSkipText: () => "Skip",
+    tooltipPreviousText: () => "Previous",
+    tooltipNextText: () => "Next",
+    tooltipFinishText: () => "Finish",
     tooltipVerticalMargin: 10,
     tooltipHorizontalMargin: 13
   };

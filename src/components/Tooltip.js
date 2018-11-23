@@ -43,21 +43,21 @@ const Tooltip = ({
     <View style={[styles.bottomBar]}>
       {!isLastStep ? (
         <TouchableOpacity onPress={handleStop}>
-          <Button style={tooltipButtonStyle}>{tooltipSkipText}</Button>
+          <Button style={tooltipButtonStyle}>{tooltipSkipText()}</Button>
         </TouchableOpacity>
       ) : null}
       {!isFirstStep ? (
         <TouchableOpacity onPress={handlePrev}>
-          <Button style={tooltipButtonStyle}>{tooltipPreviousText}</Button>
+          <Button style={tooltipButtonStyle}>{tooltipPreviousText()}</Button>
         </TouchableOpacity>
       ) : null}
       {!isLastStep ? (
         <TouchableOpacity onPress={handleNext}>
-          <Button style={tooltipButtonStyle}>{tooltipNextText}</Button>
+          <Button style={tooltipButtonStyle}>{tooltipNextText()}</Button>
         </TouchableOpacity>
       ) : (
         <TouchableOpacity onPress={handleStop}>
-          <Button style={tooltipButtonStyle}>{tooltipFinishText}</Button>
+          <Button style={tooltipButtonStyle}>{tooltipFinishText()}</Button>
         </TouchableOpacity>
       )}
     </View>
