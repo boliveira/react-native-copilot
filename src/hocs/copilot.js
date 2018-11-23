@@ -42,7 +42,8 @@ const copilot = ({
   androidStatusBarVisible,
   backdropColor,
   verticalOffset = 0,
-  tooltipColor
+  tooltipColor,
+  tooltipTextColor
 } = {}) => WrappedComponent => {
   class Copilot extends Component<any, State> {
     state = {
@@ -201,6 +202,7 @@ const copilot = ({
               this.modal = modal;
             }}
             tooltipColor={tooltipColor}
+            tooltipTextColor={tooltipTextColor}
           />
         </View>
       );
