@@ -24,7 +24,8 @@ const Tooltip = ({
   handlePrev,
   handleStop,
   currentStep,
-  tooltipTextColor
+  tooltipTextColor,
+  tooltipButtonStyle
 }: Props) => (
   <View>
     <View style={styles.tooltipContainer}>
@@ -38,21 +39,21 @@ const Tooltip = ({
     <View style={[styles.bottomBar]}>
       {!isLastStep ? (
         <TouchableOpacity onPress={handleStop}>
-          <Button>Skip</Button>
+          <Button style={tooltipButtonStyle}>Skip</Button>
         </TouchableOpacity>
       ) : null}
       {!isFirstStep ? (
         <TouchableOpacity onPress={handlePrev}>
-          <Button>Previous</Button>
+          <Button style={tooltipButtonStyle}>Previous</Button>
         </TouchableOpacity>
       ) : null}
       {!isLastStep ? (
         <TouchableOpacity onPress={handleNext}>
-          <Button>Next</Button>
+          <Button style={tooltipButtonStyle}>Next</Button>
         </TouchableOpacity>
       ) : (
         <TouchableOpacity onPress={handleStop}>
-          <Button>Finish</Button>
+          <Button style={tooltipButtonStyle}>Finish</Button>
         </TouchableOpacity>
       )}
     </View>

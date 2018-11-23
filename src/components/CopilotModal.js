@@ -64,7 +64,8 @@ class CopilotModal extends Component<Props, State> {
     androidStatusBarVisible: false,
     backdropColor: "rgba(0, 0, 0, 0.4)",
     tooltipColor: "white",
-    tooltipTextColor: "black"
+    tooltipTextColor: "black",
+    tooltipButtonStyle: null
   };
 
   state = {
@@ -308,6 +309,7 @@ class CopilotModal extends Component<Props, State> {
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
           tooltipTextColor={this.props.tooltipTextColor}
+          tooltipButtonStyle={this.props.tooltipButtonStyle}
         />
       </Animated.View>
     ];

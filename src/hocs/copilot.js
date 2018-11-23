@@ -43,7 +43,8 @@ const copilot = ({
   backdropColor,
   verticalOffset = 0,
   tooltipColor,
-  tooltipTextColor
+  tooltipTextColor,
+  tooltipButtonStyle
 } = {}) => WrappedComponent => {
   class Copilot extends Component<any, State> {
     state = {
@@ -203,6 +204,7 @@ const copilot = ({
             }}
             tooltipColor={tooltipColor}
             tooltipTextColor={tooltipTextColor}
+            tooltipButtonStyle={tooltipButtonStyle}
           />
         </View>
       );
