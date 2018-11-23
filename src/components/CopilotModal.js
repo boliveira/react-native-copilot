@@ -65,7 +65,11 @@ class CopilotModal extends Component<Props, State> {
     backdropColor: "rgba(0, 0, 0, 0.4)",
     tooltipColor: "white",
     tooltipTextColor: "black",
-    tooltipButtonStyle: null
+    tooltipButtonStyle: null,
+    tooltipSkipText: "Skip",
+    tooltipPreviousText: "Previous",
+    tooltipNextText: "Next",
+    tooltipFinishText: "Finish"
   };
 
   state = {
@@ -310,6 +314,10 @@ class CopilotModal extends Component<Props, State> {
           handleStop={this.handleStop}
           tooltipTextColor={this.props.tooltipTextColor}
           tooltipButtonStyle={this.props.tooltipButtonStyle}
+          tooltipSkipText={this.props.tooltipSkipText}
+          tooltipPreviousText={this.props.tooltipPreviousText}
+          tooltipNextText={this.props.tooltipNextText}
+          tooltipFinishText={this.props.tooltipFinishText}
         />
       </Animated.View>
     ];

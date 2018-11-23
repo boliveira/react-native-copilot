@@ -44,7 +44,11 @@ const copilot = ({
   verticalOffset = 0,
   tooltipColor,
   tooltipTextColor,
-  tooltipButtonStyle
+  tooltipButtonStyle,
+  tooltipSkipText,
+  tooltipPreviousText,
+  tooltipNextText,
+  tooltipFinishText
 } = {}) => WrappedComponent => {
   class Copilot extends Component<any, State> {
     state = {
@@ -205,6 +209,10 @@ const copilot = ({
             tooltipColor={tooltipColor}
             tooltipTextColor={tooltipTextColor}
             tooltipButtonStyle={tooltipButtonStyle}
+            tooltipSkipText={tooltipSkipText}
+            tooltipPreviousText={tooltipPreviousText}
+            tooltipNextText={tooltipNextText}
+            tooltipFinishText={tooltipFinishText}
           />
         </View>
       );
