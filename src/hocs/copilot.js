@@ -48,7 +48,9 @@ const copilot = ({
   tooltipSkipText,
   tooltipPreviousText,
   tooltipNextText,
-  tooltipFinishText
+  tooltipFinishText,
+  tooltipVerticalMargin,
+  tooltipHorizontalMargin
 } = {}) => WrappedComponent => {
   class Copilot extends Component<any, State> {
     state = {
@@ -213,6 +215,8 @@ const copilot = ({
             tooltipPreviousText={tooltipPreviousText}
             tooltipNextText={tooltipNextText}
             tooltipFinishText={tooltipFinishText}
+            tooltipHorizontalMargin={tooltipHorizontalMargin}
+            tooltipVerticalMargin={tooltipVerticalMargin}
           />
         </View>
       );

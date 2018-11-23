@@ -69,7 +69,9 @@ class CopilotModal extends Component<Props, State> {
     tooltipSkipText: "Skip",
     tooltipPreviousText: "Previous",
     tooltipNextText: "Next",
-    tooltipFinishText: "Finish"
+    tooltipFinishText: "Finish",
+    tooltipVerticalMargin: 10,
+    tooltipHorizontalMargin: 13
   };
 
   state = {
@@ -157,11 +159,12 @@ class CopilotModal extends Component<Props, State> {
     const arrow = {};
 
     if (verticalPosition === "bottom") {
-      tooltip.top = obj.top + obj.height + MARGIN;
+      tooltip.top = obj.top + obj.height + this.props.tooltipVerticalMargin;
       arrow.borderBottomColor = this.props.tooltipColor;
       arrow.top = tooltip.top - ARROW_SIZE * 2;
     } else {
-      tooltip.bottom = layout.height - (obj.top - MARGIN);
+      tooltip.bottom =
+        layout.height - (obj.top - this.props.tooltipVerticalMargin);
       arrow.borderTopColor = this.props.tooltipColor;
       arrow.bottom = tooltip.bottom - ARROW_SIZE * 2;
     }
@@ -169,14 +172,21 @@ class CopilotModal extends Component<Props, State> {
     if (horizontalPosition === "left") {
       tooltip.right = Math.max(layout.width - (obj.left + obj.width), 0);
       tooltip.right =
-        tooltip.right === 0 ? tooltip.right + MARGIN : tooltip.right;
-      tooltip.maxWidth = layout.width - tooltip.right - MARGIN;
-      arrow.right = tooltip.right + MARGIN;
+        tooltip.right === 0
+          ? tooltip.right + this.props.tooltipHorizontalMargin
+          : tooltip.right;
+      tooltip.maxWidth =
+        layout.width - tooltip.right - this.props.tooltipHorizontalMargin;
+      arrow.right = tooltip.right + this.props.tooltipHorizontalMargin;
     } else {
       tooltip.left = Math.max(obj.left, 0);
-      tooltip.left = tooltip.left === 0 ? tooltip.left + MARGIN : tooltip.left;
-      tooltip.maxWidth = layout.width - tooltip.left - MARGIN;
-      arrow.left = tooltip.left + MARGIN;
+      tooltip.left =
+        tooltip.left === 0
+          ? tooltip.left + this.props.tooltipHorizontalMargin
+          : tooltip.left;
+      tooltip.maxWidth =
+        layout.width - tooltip.left - this.props.tooltipHorizontalMargin;
+      arrow.left = tooltip.left + this.props.tooltipHorizontalMargin;
     }
 
     const animate = {
