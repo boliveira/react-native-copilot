@@ -63,7 +63,8 @@ class CopilotModal extends Component<Props, State> {
     animated: typeof NativeModules.RNSVGSvgViewManager !== "undefined",
     androidStatusBarVisible: false,
     backdropColor: "rgba(0, 0, 0, 0.4)",
-    tooltipColor: "white"
+    tooltipColor: "white",
+    tooltipTextColor: "black"
   };
 
   state = {
@@ -152,11 +153,11 @@ class CopilotModal extends Component<Props, State> {
 
     if (verticalPosition === "bottom") {
       tooltip.top = obj.top + obj.height + MARGIN;
-      arrow.borderBottomColor = "#fff";
+      arrow.borderBottomColor = this.props.tooltipColor;
       arrow.top = tooltip.top - ARROW_SIZE * 2;
     } else {
       tooltip.bottom = layout.height - (obj.top - MARGIN);
-      arrow.borderTopColor = "#fff";
+      arrow.borderTopColor = this.props.tooltipColor;
       arrow.bottom = tooltip.bottom - ARROW_SIZE * 2;
     }
 
@@ -290,14 +291,7 @@ class CopilotModal extends Component<Props, State> {
           currentStepNumber={this.props.currentStepNumber}
         />
       </Animated.View>,
-      <Animated.View
-        key="arrow"
-        style={[
-          styles.arrow,
-          this.state.arrow,
-          { backgroundColor: this.props.tooltipColor }
-        ]}
-      />,
+      <Animated.View key="arrow" style={[styles.arrow, this.state.arrow]} />,
       <Animated.View
         key="tooltip"
         style={[
@@ -313,6 +307,7 @@ class CopilotModal extends Component<Props, State> {
           handleNext={this.handleNext}
           handlePrev={this.handlePrev}
           handleStop={this.handleStop}
+          tooltipTextColor={this.props.tooltipTextColor}
         />
       </Animated.View>
     ];
